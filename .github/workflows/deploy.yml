@@ -3,7 +3,7 @@ name: Deploy to Server
 on:
   push:
     paths:
-      - 'homelab/**'   # 仅当 homelab 目录下的文件发生变化时触发
+      - 'cloudlab/**'   # 仅当 homelab 目录下的文件发生变化时触发
 
 jobs:
   deploy:
@@ -17,13 +17,13 @@ jobs:
       id: changes
       run: |
         # 获取所有修改的文件，并提取其顶级目录（即服务名称）
-        CHANGED_DIRS=$(git diff --name-only HEAD^ HEAD | grep "^homelab/" | cut -d '/' -f 2 | sort | uniq)
+        CHANGED_DIRS=$(git diff --name-only HEAD^ HEAD | grep "^cloudlab/" | cut -d '/' -f 2 | sort | uniq)
         echo "Changed directories: $CHANGED_DIRS"
         echo "::set-output name=dirs::$CHANGED_DIRS"
 
-    - name: Sync homepage directory to server and restart service
+    - name: Sync directory to server and restart service
       if: contains(steps.changes.outputs.dirs, 'homepage')
       run: |
         echo "Syncing homepage directory to server"
-        rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./homelab/homepage/ user@your_server_ip:/path/to/your/homelab/homepage/
-        ssh -o StrictHostKeyChecking=no user@your_server_ip "cd /path/to/your/homelab/homepage && docker compose down && docker compose up -d"
+        rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./cloudlab/homepage/ user@b_server_ip:~/cloudlab/homepage/
+        ssh -o StrictHostKeyChecking=no user@b_server_ip "cd ~/cloudlab/homepage && docker compose down && docker compose up -d"
