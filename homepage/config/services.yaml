@@ -13,6 +13,7 @@
             url: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
             username:  "{{HOMEPAGE_VAR_PROXMOX_USER}}"
             password:  "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
+            node: pve
     # todo macmini
     # todo nas
 
