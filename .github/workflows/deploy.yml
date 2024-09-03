@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'cloudlab/**'   # 仅当 cloudlab 目录下的文件发生变化时触发
+  workflow_dispatch:   # 允许手动触发
 
 jobs:
   deploy:
