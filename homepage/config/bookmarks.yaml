@@ -1,0 +1,54 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/bookmarks
+
+- Social & ENTs:
+     - Gmail:
+        - icon: gmail.png
+          href: https://gmail.com/
+     - X:
+        - icon: twitter.png
+          href: https://x.com/
+     - Reddit:
+        - icon: reddit.png 
+          href: https://reddit.com/
+     - YouTube:
+        - icon: youtube.png
+          href: https://youtube.com/
+
+- Repositories:
+  - Toolkit:
+    - icon: si-github-#FFFFFF
+      href: https://github.com/Elepv/bash-toolkit/
+  - Boilerplates:
+    - icon: si-github-#FFFFFF
+      href: https://github.com/christianlempa/boilerplates
+  - Cheat-Sheets:
+    - icon: si-github-#FFFFFF
+      href: https://github.com/christianlempa/cheat-sheets
+  - Scripts:
+    - icon: si-github-#FFFFFF
+      href: https://github.com/christianlempa/scripts
+
+- AI & Technology:
+    - ChatGPT:
+        - icon: chatgpt.png
+          href: https://chatgpt.com/
+    - OpenRouter:
+        - icon: https://images.gtoxai.com/image-hosting/2024/09/hubspot-ba568bcf81e7ae22a6bda1e5cabce500.svg
+          href: https://openrouter.com/
+    - DeepSeek:
+        - abbr: DS
+          href: https://deepseek.com/
+
+- Services:
+    - Cloudflare:
+        - icon: cloudflare.png
+          href: https://cloudflare.com/
+    - SMS-Activate:
+        - abbr: SA
+          href: https://sms-activate.io/
+    - Mailgun:
+        - abbr: MG
+          href: https://mailgun.com/
+

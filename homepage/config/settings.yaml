@@ -1,0 +1,61 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/settings
+
+title: GTO x AI
+
+language: zh-CN
+
+target: _blank # Possible options include _blank, _self, and _top
+
+background:
+  image: https://images.gtoxai.com/image-hosting/2024/09/wallhaven-x8gkpo-c9e04e2f9889514917d10987beb69119.jpg
+  blur: sm # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
+  saturate: 200 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+  brightness: 56 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+  opacity: 60 # 0-100
+
+theme: dark
+color: stone
+
+useEqualHeights: true
+
+#headerStyle: boxedWidgets
+headerStyle: clean
+
+cardBlur: sm
+
+layout:
+  Infrastructure and Data:
+    # icon: mdi-server-#FFFFFF
+    icon: https://images.gtoxai.com/image-hosting/2024/09/infrastructure-9144e3626544575d51d4adc2e711f54c.png
+    columns: 3
+  Networking:
+    # icon: mdi-network-#FFFFFF
+    icon: https://images.gtoxai.com/image-hosting/2024/09/neural-a2ab93ec6973fbc059e8e0246234b2e4.png
+  Management:
+    icon: mdi-auto-fix-#FFFFFF
+  Storage:
+    header: true
+  Media:
+    header: true
+  Automation:
+    icon: mdi-cog-play-#FFFFFF
+  IoT and Smarthome:
+    # icon: mdi-home-#FFFFFF
+    icon: https://images.gtoxai.com/image-hosting/2024/09/house%20(1)-423e3322b4b457f057009a23402539e3.png
+  Security and Identity:
+    icon: mdi-shield-lock-#FFFFFF
+  Others:
+    icon: https://images.gtoxai.com/image-hosting/2024/09/application%20(1)-ff88e909e089d06169812c88e59e9980.png
+
+providers:
+  finnhub: crb06n1r01qo7cafhapgcrb06n1r01qo7cafhaq0
+  openweathermap: 9bed1609e3f94930f958c03770b1e84b
+
+quicklaunch:
+  searchDescriptions: true
+  hideInternetSearch: true
+  showSearchSuggestions: true
+  hideVisitURL: true
+  provider: google # google, duckduckgo, bing, baidu, brave or custom

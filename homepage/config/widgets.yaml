@@ -1,0 +1,58 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/service-widgets
+
+- logo:
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/I_Love_New_York.svg/1101px-I_Love_New_York.svg.png # optional
+
+- greeting:
+    text: "            GTO  x  A I            "
+    text_size: 4xl
+
+- search:
+    provider: google
+    target: _blank
+
+- datetime:
+    text_size: xl
+    format:
+      timeStyle: short
+      hourCycle: h23
+
+- openmeteo:
+    provider: openweathermap
+    label: Nantong
+    lang: zh #Language for the weather widget
+    latitude: 32.0303
+    longitude: 120.8747
+    units: metric
+
+- resources:
+    label: System
+    cpu: true
+    memory: true
+    cputemp: true
+    tempmin: 0 # optional, minimum cpu temp
+    tempmax: 100 # optional, maximum cpu temp
+    uptime: true
+    units: metric # only used by cpu temp
+    refresh: 3000 # optional, in ms
+
+- resources:
+    label: Disk
+    expanded: true
+    disk: /
+
+- stocks:
+    provider: finnhub
+    color: true # optional, defaults to true
+    cache: 1 # optional, default caches results for 1 minute
+    watchlist:
+      - GME
+      - AMC
+      - NVDA
+      - AMD
+      - TSM
+      - MSFT
+      - AAPL
+      - BRK.A

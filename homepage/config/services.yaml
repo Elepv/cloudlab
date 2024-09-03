@@ -1,0 +1,44 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+- Infrastructure and Data:
+    - Proxmox:
+        icon: proxmox.svg
+        href: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
+        description: Proxmox VE
+        widget:
+            type: proxmox
+            url: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
+            username:  "{{HOMEPAGE_VAR_PROXMOX_USER}}"
+            password:  "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
+
+- Networking:
+    - Pi-Hole1:
+        icon: pi-hole.svg
+        href: "{{HOMEPAGE_VAR_PIHOLE_URL_1}}"
+        description: quasar
+        widget:
+            type: pihole
+            url: "{{HOMEPAGE_VAR_PIHOLE_URL_1}}"
+            key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_1}}"
+
+- IoT and Smarthome:
+    - Home Assistant:
+        icon: home-assistant.svg
+        href: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
+        description: home
+          #        widget:
+          #            type: homeassistant
+          #            url: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
+          #            key: "{{HOMEPAGE_VAR_HOME_ASSISTANT_API_KEY}}"
+
+- Others:
+    - Cowboy:
+        icon: mdi-account-cowboy-hat-#FF0000 # icons found here https://pictogrammers.com/library/mdi/
+        href: https://localhost/
+        description: giddyup service
+    - McDonald’s:
+        icon: si-mcdonalds-#FFD700 # icons found here https://simpleicons.org/
+        href: https://www.mcdonalds.com/
+        description: homepage
