@@ -18,10 +18,20 @@
     # todo nas
 
 - Networking:
+    - Mikrotik:
+        icon: mikrotik.svg
+        href: "{{HOMEPAGE_VAR_MIKROTIK_URL}}"
+        description: ROS
+        widget:
+          type: mikrotik
+          url: "{{HOMEPAGE_VAR_MIKROTIK_URL}}"
+          username: "{{HOMEPAGE_VAR_MIKROTIK_USERNAME}}"
+          password: "{{HOMEPAGE_VAR_MIKROTIK_PASS}}"
+
     - Pi-Hole1:
         icon: pi-hole.svg
         href: "{{HOMEPAGE_VAR_PIHOLE_URL_1}}"
-        description: quasar
+        description: Pi-Hole
         widget:
             type: pihole
             url: "{{HOMEPAGE_VAR_PIHOLE_URL_1}}"
@@ -31,7 +41,7 @@
     - Home Assistant:
         icon: home-assistant.svg
         href: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
-        description: home
+        description: vhome
         widget:
           type: homeassistant
           url: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
@@ -46,3 +56,4 @@
         icon: si-mcdonalds-#FFD700 # icons found here https://simpleicons.org/
         href: https://www.mcdonalds.com/
         description: homepage
+

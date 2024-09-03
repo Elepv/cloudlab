@@ -50,8 +50,8 @@ layout:
     icon: https://images.gtoxai.com/image-hosting/2024/09/application%20(1)-ff88e909e089d06169812c88e59e9980.png
 
 providers:
-  finnhub: "{{HOMEPAGE_VAR_FINNHUB_API_KEY}}"
-  openweathermap: "{{HOMEPAGE_VAR_OPENWEATHERMAP_API_KEY}}"
+  finnhub: {{HOMEPAGE_VAR_FINNHUB_API_KEY}}
+  openweathermap: {{HOMEPAGE_VAR_OPENWEATHERMAP_API_KEY}}
 
 quicklaunch:
   searchDescriptions: true
