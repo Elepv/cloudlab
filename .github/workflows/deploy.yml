@@ -3,7 +3,7 @@ name: Deploy to Server
 on:
   push:
     paths:
-      - 'cloudlab/**'   # 仅当 homelab 目录下的文件发生变化时触发
+      - 'cloudlab/**'   # 仅当 cloudlab 目录下的文件发生变化时触发
 
 jobs:
   deploy:
@@ -12,6 +12,11 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+
+    - name: Setup SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Identify changed directory
       id: changes
@@ -25,5 +30,5 @@ jobs:
       if: contains(steps.changes.outputs.dirs, 'homepage')
       run: |
         echo "Syncing homepage directory to server"
-        rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./cloudlab/homepage/ user@b_server_ip:~/cloudlab/homepage/
-        ssh -o StrictHostKeyChecking=no user@b_server_ip "cd ~/cloudlab/homepage && docker compose down && docker compose up -d"
+        rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./cloudlab/homepage/ ${{ secrets.USER }}@${{ secrets.H_SERVER_IP }}:~/cloudlab/homepage/
+        ssh -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.H_SERVER_IP }} "cd ~/cloudlab/homepage && docker compose down && docker compose up -d"
