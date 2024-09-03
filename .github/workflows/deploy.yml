@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3  # v3 版本应该兼容 Node.js 20
+      uses: actions/checkout@v3
 
     - name: Setup SSH
       uses: webfactory/ssh-agent@v0.6.0
@@ -20,9 +20,9 @@ jobs:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Identify changed directory
-      id: changes
       run: |
-        CHANGED_DIRS=$(git diff --name-only HEAD^ HEAD | grep "^cloudlab/" | cut -d '/' -f 2 | sort | uniq)
+        git fetch --depth=1 origin main
+        CHANGED_DIRS=$(git diff --name-only origin/main HEAD | grep "^cloudlab/" | cut -d '/' -f 2 | sort | uniq)
         echo "Changed directories: $CHANGED_DIRS"
         echo "dirs=$CHANGED_DIRS" >> $GITHUB_ENV
 
