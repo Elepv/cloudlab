@@ -12,23 +12,22 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3  # v3 版本应该兼容 Node.js 20
 
     - name: Setup SSH
-      uses: webfactory/ssh-agent@v0.5.3
+      uses: webfactory/ssh-agent@v0.6.0
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Identify changed directory
       id: changes
       run: |
-        # 获取所有修改的文件，并提取其顶级目录（即服务名称）
         CHANGED_DIRS=$(git diff --name-only HEAD^ HEAD | grep "^cloudlab/" | cut -d '/' -f 2 | sort | uniq)
         echo "Changed directories: $CHANGED_DIRS"
-        echo "::set-output name=dirs::$CHANGED_DIRS"
+        echo "dirs=$CHANGED_DIRS" >> $GITHUB_ENV
 
     - name: Sync directory to server and restart service
-      if: contains(steps.changes.outputs.dirs, 'homepage')
+      if: contains(env.dirs, 'homepage')
       run: |
         echo "Syncing homepage directory to server"
         rsync -avz -e "ssh -o StrictHostKeyChecking=no" ./cloudlab/homepage/ ${{ secrets.USER }}@${{ secrets.H_SERVER_IP }}:~/cloudlab/homepage/
