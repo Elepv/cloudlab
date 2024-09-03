@@ -3,6 +3,7 @@
 # https://gethomepage.dev/latest/configs/services
 
 - Infrastructure and Data:
+    # pve home server
     - Proxmox:
         icon: proxmox.svg
         href: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
@@ -12,6 +13,8 @@
             url: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
             username:  "{{HOMEPAGE_VAR_PROXMOX_USER}}"
             password:  "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
+    # todo macmini
+    # todo nas
 
 - Networking:
     - Pi-Hole1:
@@ -28,10 +31,10 @@
         icon: home-assistant.svg
         href: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
         description: home
-          #        widget:
-          #            type: homeassistant
-          #            url: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
-          #            key: "{{HOMEPAGE_VAR_HOME_ASSISTANT_API_KEY}}"
+        widget:
+          type: homeassistant
+          url: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
+          key: "{{HOMEPAGE_VAR_HOME_ASSISTANT_API_KEY}}"
 
 - Others:
     - Cowboy:
