@@ -21,10 +21,10 @@
 
 - openmeteo:
     provider: openweathermap
-    label: Nantong
+    label: Tokyo
     lang: zh #Language for the weather widget
-    latitude: 32.0303
-    longitude: 120.8747
+    latitude: 35.652832
+    longitude: 139.839478
     units: metric
 
 - resources:
